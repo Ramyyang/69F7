@@ -34,7 +34,7 @@ from utils.config_utils import (
 )
 from utils.dataset_utils import get_preprocessed_dataset
 
-from utils.AsFT_train_utils import (
+from utils.SECURE_train_utils import (
     train,
     freeze_transformer_layers,
     setup,

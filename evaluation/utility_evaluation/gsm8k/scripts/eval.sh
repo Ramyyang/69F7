@@ -2,7 +2,7 @@
 
 
 export CUDA_VISIBLE_DEVICES=1
-# bash scripts/BEA_2.sh> scripts/BEA_2.log 2>&1 &
+
 
 python pre_eval.py \
     --model_folder ../../../ckpts/Llama-2-7b-chat-fp16 \

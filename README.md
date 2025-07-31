@@ -6,14 +6,14 @@
 
 
 <p align="center">
-    <img src="images/fig1.png" alt="Orbit Framework" width="900">
+    <img src="images/fig1.png" alt="SECURE Framework" width="900">
 </p>
 <p align="center" style="font-size: 14px; font-style: italic;">
-    Figure 1: The Orbit framework decomposes parameter updates into safety-aligned (d<sub>aligned</sub>) and orthogonal components, suppressing harmful updates via subspace regularization.
+    Figure 1: The SECURE framework decomposes parameter updates into safety-aligned (d<sub>aligned</sub>) and orthogonal components, suppressing harmful updates via subspace regularization.
 </p>
 
 **Key Idea**:  
-Orbit leverages the **alignment direction** (weight difference between safety-aligned and base models) as an anchor. By decomposing parameter updates and constraining orthogonal components through a novel regularization term, it ensures fine-tuning remains within the "narrow safety basin", achieving both **strong safety preservation** and **task performance**.
+SECURE leverages the **alignment direction** (weight difference between safety-aligned and base models) as an anchor. By decomposing parameter updates and constraining orthogonal components through a novel regularization term, it ensures fine-tuning remains within the "narrow safety basin", achieving both **strong safety preservation** and **task performance**.
 
 ---
 
@@ -22,9 +22,9 @@ Orbit leverages the **alignment direction** (weight difference between safety-al
 ### Environment Configuration
 ```bash
 # Create conda environment
-conda create -n Orbit python=3.9
-conda activate Orbit
-cd Orbit 
+conda create -n SECURE python=3.9
+conda activate SECURE
+cd SECURE 
 
 # Install dependencies
 pip install -r requirements.txt
@@ -47,7 +47,7 @@ mkdir -p ckpts/
 
 ### Directory Structure
 ```bash
-Orbit/
+SECURE/
 ├── ckpts/
 │   ├── Llama-2-7B-Chat-fp16/
 │   ├── Llama-2-7b-hf/
@@ -73,12 +73,12 @@ Training scripts are organized by dataset under `scripts/`, supporting:
 #### Basic Training Commands
 ```bash
 # For Agnews dataset (default 1k_p_0.1 mode)
-bash scripts/agnews/Orbit_reg1_p_0.1.sh > finetuned_logs/agnews/Orbit_reg1_p_0.1.log 2>&1 &
+bash scripts/agnews/SECURE_reg1_p_0.1.sh > finetuned_logs/agnews/SECURE_reg1_p_0.1.log 2>&1 &
 
 # Other datasets
-bash scripts/alpaca/Orbit_reg1_p_0.1.sh > finetuned_logs/alpaca/Orbit_reg1_p_0.1.log 2>&1 &
-bash scripts/gsm8k/Orbit_reg1_p_0.1.sh > finetuned_logs/gsm8k/Orbit_reg1_p_0.1.log 2>&1 &
-bash scripts/SST2/Orbit_reg1_p_0.1.sh > finetuned_logs/SST2/Orbit_reg1_p_0.1.log 2>&1 &
+bash scripts/alpaca/SECURE_reg1_p_0.1.sh > finetuned_logs/alpaca/SECURE_reg1_p_0.1.log 2>&1 &
+bash scripts/gsm8k/SECURE_reg1_p_0.1.sh > finetuned_logs/gsm8k/SECURE_reg1_p_0.1.log 2>&1 &
+bash scripts/SST2/SECURE_reg1_p_0.1.sh > finetuned_logs/SST2/SECURE_reg1_p_0.1.log 2>&1 &
 ```
 
 #### Experimental Modes
@@ -131,7 +131,7 @@ cd ../alpaca
 ---
 ## 📂 Project Structure
 ```bash
-Orbit/
+SECURE/
 ├── ckpts/                     # Model checkpoints
 ├── configs/                   # Training configurations
 ├── evaluation/
